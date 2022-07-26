@@ -1,0 +1,6 @@
+<h2>{{ categ }}</h2>
+<ul>
+    <span *ngFor="let tech of techs">
+        <li *ngIf="tech.category == categ">{{ tech.name }} - {{ tech.info }} - {{ tech.category }} - {{tech.level}}</li>
+    </span>
+</ul>

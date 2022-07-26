@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div class="form-group">
+            <label for="category">Category</label>
+            <select id="category" class="form-control" ngModel required name="category">
+                <option *ngFor="let categ of categs" value='{{ categ }}'>{{ categ }}</option>
+            </select>   
+        </div>
+        <div id="user-data" ngModelGroup="userData">
+            <div class="form-group">
+                <label for="name">Technology</label>
+                <input type="text" id="name" class="form-control" ngModel name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="info">Info</label>
+                <input type="text" id="info" class="form-control" ngModel name="info" required>
+            </div>
+            <div class="form-group">
+                <label for="url">URL</label>
+                <input type="text" id="url" class="form-control" ngModel name="url" required>
+            </div>
+            <div class="form-group">
+                <label for="level">Level</label>
+                <input type="number" id="level" class="form-control" ngModel name="level" required min:1 max:100>
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Submit</button>
+        </form>
+    </div>
+</div>
